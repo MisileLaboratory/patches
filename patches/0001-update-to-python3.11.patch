@@ -1,0 +1,47 @@
+From 48cd6e5849f3eb24be477fdf02184912420fb296 Mon Sep 17 00:00:00 2001
+From: MisileLaboratory <icecreamhappytroll@gmail.com>
+Date: Mon, 2 Jan 2023 01:18:15 +0000
+Subject: [PATCH] update to python3.11
+
+---
+ misilelib-python/misilelibpy/__init__.py | 10 ++++------
+ misilelib-python/pyproject.toml          |  2 +-
+ 2 files changed, 5 insertions(+), 7 deletions(-)
+
+diff --git a/misilelibpy/__init__.py b/misilelibpy/__init__.py
+index 33c8a36..bde1095 100644
+--- a/misilelib-python/misilelibpy/__init__.py
++++ b/misilelib-python/misilelibpy/__init__.py
+@@ -6,12 +6,10 @@ def check_path(unixpath: str):
+     return join(*a)
+ 
+ def write_once(path: str, con: str):
+-    a = open(path, 'w')
+-    a.write(con)
+-    a.close()
++    with open(path, 'w') as a:
++        a.write(con)
+ 
+ def read_once(path: str):
+-    a = open(path, 'r')
+-    b = a.read()
+-    a.close()
++    with open(path, 'r') as a:
++        b = a.read()
+     return b
+diff --git a/pyproject.toml b/pyproject.toml
+index b1dded8..6d547ad 100644
+--- a/misilelib-python/pyproject.toml
++++ b/misilelib-python/pyproject.toml
+@@ -8,7 +8,7 @@ readme = "README.md"
+ packages = [{ include = "misilelibpy" }]
+ 
+ [tool.poetry.dependencies]
+-python = "3.11.0"
++python = "3.11.1"
+ 
+ [build-system]
+ requires = ["poetry-core"]
+-- 
+2.39.0
+
