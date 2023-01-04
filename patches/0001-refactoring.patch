@@ -1,0 +1,76 @@
+From 92342f8b3baaeb9d46b4e0debadbdd8c4fb75500 Mon Sep 17 00:00:00 2001
+From: MisileLaboratory <icecreamhappytroll@gmail.com>
+Date: Wed, 4 Jan 2023 03:25:17 +0000
+Subject: [PATCH] refactoring
+
+---
+ misilelib-c/misilelib.c | 14 ++++++--------
+ misilelib-c/misilelib.h | 10 +++++-----
+ 2 files changed, 11 insertions(+), 13 deletions(-)
+
+diff --git a/misilelib-c/misilelib.c b/misilelib-c/misilelib.c
+index 98ed06d..5bf47e6 100644
+--- a/misilelib-c/misilelib.c
++++ b/misilelib-c/misilelib.c
+@@ -1,35 +1,33 @@
+ 
+ #include <stdio.h>
+ 
+-char single_input(char* printstr) {
++char single_input(char printstr[]) {
+     printf("%s", printstr);
+     return getchar();
+ }
+ 
+-int int_input(char* printstr) {
++int int_input(char printstr[]) {
+     int retval;
+     printf("%s", printstr);
+     scanf("%d", &retval);
+     return retval;
+ }
+ 
+-float float_input(char* printstr) {
++float float_input(char printstr[]) {
+     float retval;
+     printf("%s", printstr);
+     scanf("%f", &retval);
+     return retval;
+ }
+ 
+-double double_input(char* printstr) {
++double double_input(char printstr[]) {
+     double retval;
+     printf("%s", printstr);
+     scanf("%lf", &retval);
+     return retval;
+ }
+ 
+-char multiplechars(char* printstr) {
+-    char retval;
++void multiplechars(char printstr[], char* retval) {
+     printf("%s", printstr);
+-    scanf("%s", &retval);
+-    return retval;
++    scanf("%s", retval);
+ }
+\ No newline at end of file
+diff --git a/misilelib-c/misilelib.h b/misilelib-c/misilelib.h
+index 5dc56f0..14c6480 100644
+--- a/misilelib-c/misilelib.h
++++ b/misilelib-c/misilelib.h
+@@ -1,6 +1,6 @@
+ 
+-char single_input(char* printstr);
+-int int_input(char* printstr);
+-float float_input(char* printstr);
+-double double_input(char* printstr);
+-char multiplechars(char* printstr);
++char single_input(char printstr[]);
++int int_input(char printstr[]);
++float float_input(char printstr[]);
++double double_input(char printstr[]);
++char* multiplechars(char printstr[]);
+-- 
+2.39.0
+
