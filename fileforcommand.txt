@@ -5,5 +5,5 @@ sudo apt autoremove -y
 sudo apt install -y python3.11 python3.11-dev python3.11-venv
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 curl -sSL https://install.python-poetry.org | python3.11 -
-wget https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.1161+a44085dc2.tar.xz
+wget https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.1183+2b9478ce1.tar.xz
 tar -xvf zig*
