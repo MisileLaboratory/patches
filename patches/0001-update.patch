@@ -1,0 +1,50 @@
+From 6cfe00a875c8c5d738b100f80805f6cfaeac206b Mon Sep 17 00:00:00 2001
+From: MisileLaboratory <icecreamhappytroll@gmail.com>
+Date: Fri, 6 Jan 2023 04:57:38 +0000
+Subject: [PATCH] update
+
+---
+ LICENSE.md          | 6 +++++-
+ libraries/libs      | 1 +
+ libraries/misilelib | 2 +-
+ 3 files changed, 7 insertions(+), 2 deletions(-)
+ create mode 120000 libraries/libs
+
+diff --git a/LICENSE.md b/LICENSE.md
+index 9067282..02d68cd 100644
+--- a/LICENSE.md
++++ b/LICENSE.md
+@@ -1,6 +1,6 @@
+ # Misilelab license v1.7
+ 
+-Default author information: h3 by MisileLaboratory, Klosie 
++Default author information: Space lang by MisileLaboratory, [fromu94](https://twitch.tv/fromu94)
+ You can override author in subproject like `Override author information: Base repository by Misile`
+ 
+ ## derivative works condition
+@@ -8,3 +8,7 @@ You can override author in subproject like `Override author information: Base re
+ You need change project to open source project or get permission for private project from project author.  
+ You need give author information to other like this. ex) {Project or File name} by {author}.  
+ Author doesn't have warranty.  
++
++## Why fromu94 is project author without coding?
++
++This language's name is derived from [fromu94.](https://www.twitch.tv/fromu94)
+diff --git a/libraries/libs b/libraries/libs
+new file mode 120000
+index 0000000..4dc6caa
+--- /dev/null
++++ b/libraries/libs
+@@ -0,0 +1 @@
++libs
+\ No newline at end of file
+diff --git a/libraries/misilelib b/libraries/misilelib
+index 8c281b1..391ac40 160000
+--- a/libraries/misilelib
++++ b/libraries/misilelib
+@@ -1 +1 @@
+-Subproject commit 8c281b12de36a45733f1dbc96428e2f51cd107bb
++Subproject commit 391ac40a7080f47f22b28eaa4de2ca3bad59664c
+-- 
+2.37.3
+
