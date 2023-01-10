@@ -1,0 +1,73 @@
+From 376676ba75aca0d4a815c1bfe613e18d0fc15390 Mon Sep 17 00:00:00 2001
+From: MisileLaboratory <icecreamhappytroll@gmail.com>
+Date: Tue, 10 Jan 2023 03:12:56 +0000
+Subject: [PATCH] new patch bruh
+
+---
+ misilelib-c/misilelib.c | 24 ++++++++++++++++++++----
+ misilelib-c/misilelib.h |  6 ++++--
+ 2 files changed, 24 insertions(+), 6 deletions(-)
+
+diff --git a/misilelib-c/misilelib.c b/misilelib-c/misilelib.c
+index 818c4ce..795a16c 100644
+--- a/misilelib-c/misilelib.c
++++ b/misilelib-c/misilelib.c
+@@ -1,6 +1,7 @@
+ #include <stdio.h>
+ #include <stdbool.h>
+ #include <string.h>
++#include <stdlib.h>
+ 
+ char single_input(char printstr[]) {
+     printf("%s", printstr);
+@@ -28,11 +29,26 @@ double double_input(char printstr[]) {
+     return retval;
+ }
+ 
+-void multiplechars(char printstr[], char* retval) {
++char multiplechars(char printstr[]) {
++    char* buffer;
+     printf("%s", printstr);
+-    scanf("%s", retval);
++    scanf("%s", buffer);
++    return *buffer;
+ }
+ 
+-bool compare_strs(char* char1[], char* char2[]) {
++bool compare_strs(char char1[], char char2[]) {
+     return strcmp(char1, char2) == 0;
+-}
+\ No newline at end of file
++}
++
++char* split (char buf[]) {
++    int i = 0;
++    char *p = strtok(buf, "/");
++    char *array[sizeof(p)];
++
++    while (p != NULL){
++        array[i++] = p;
++        p = strtok(NULL, "/");
++    }
++
++    return p;
++}
+diff --git a/misilelib-c/misilelib.h b/misilelib-c/misilelib.h
+index 3b25bbc..802ea3c 100644
+--- a/misilelib-c/misilelib.h
++++ b/misilelib-c/misilelib.h
+@@ -1,7 +1,9 @@
++#include <stdbool.h>
+ 
+ char single_input(char printstr[]);
+ int int_input(char printstr[]);
+ float float_input(char printstr[]);
+ double double_input(char printstr[]);
+-void multiplechars(char printstr[], char* retval);
+-bool compare_strs(char* char1[], char* char2[]);
++char* multiplechars(char printstr[]);
++bool compare_strs(char char1[], char char2[]);
++char* split (char buf[]);
+-- 
+2.39.0
+

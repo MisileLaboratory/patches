@@ -2,8 +2,9 @@ sudo add-apt-repository -y ppa:deadsnakes
 sudo apt update
 sudo apt dist-upgrade -y
 sudo apt autoremove -y
-sudo apt install -y python3.11 python3.11-dev python3.11-venv
+sudo apt install -y python3.11 python3.11-dev python3.11-venv zip unzip build-essential pkg-config
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 curl -sSL https://install.python-poetry.org | python3.11 -
-wget https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.1183+2b9478ce1.tar.xz
-tar -xvf zig*
+wget https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.1253+fcee1bf99.tar.xz
+tar -xvf zig*.tar.xz
+rm zig*.tar.xz
